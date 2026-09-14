@@ -1,12 +1,23 @@
 
 <?php
-
-// var_dump($_POST);
-// die();
-
 // etape à faire ici : validation des donnée avec tous les if de verification du $_POST ainsi que le noettoyage des inputs
 // bla bla bla les étapes de sécurité 
 
+// SECURITE
+ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+    header("Location: ../public/index.php?error=bad-method");
+    exit();
+ }
+ if (!isset($_POST['id']) || !isset($_POST['intitule']) ) {
+    header("Location: ../public/index.php?error=missing-value");
+    exit();
+ }
+ if (empty($_POST['id']) || empty($_POST['intitule'])) {
+    header("Location: ../public/index.php?error=empty-value");
+    exit();
+ }
+
+// INPUT SANITIZATION
 $id = htmlspecialchars(trim($_POST["id"]));
 $intitule = htmlspecialchars(trim($_POST["intitule"]));
 

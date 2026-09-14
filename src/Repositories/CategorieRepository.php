@@ -87,18 +87,18 @@ class CategorieRepository
     }
     
 
-        // public function delete(int $id): bool
-        // {
-        //     try {
-        //         $request = $this->db->prepare("DELETE FROM `categorie` WHERE 'id'=:id");
-        //         $request->execute([
-        //             ':id' => $id
-        //         ]);
+        public function delete(int $id): bool
+        {
+            try {
+                $request = $this->db->prepare("DELETE FROM `categorie` WHERE 'id'=:id");
+                $request->execute([
+                    ':id' => $id
+                ]);
 
-        //         return true;
-        //     } catch (\Throwable $th) {
+                return true;
+            } catch (\Throwable $th) {
 
-        //         return false;
-        //     }
-        // }
+                return false;
+            }
+        }
 }
