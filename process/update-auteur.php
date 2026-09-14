@@ -24,11 +24,11 @@ $nom = htmlspecialchars(trim($_POST["nom"]));
 require_once "../utils/autoloader.php";
 require_once "../utils/db_connect.php";
 
-$categorieRepository = new CategorieRepository($db);
+$categorieRepository = new AuteurRepository($db);
 $isSuccess = $categorieRepository->updateAuteur($id, $prenom, $nom);
 
 if ($isSuccess) {
-    header("Location: ../public/auteur.php");
+    header("Location: ../public/auteurs.php");
 } else {
     header("Location: ../public/add-auteur.php?error=database-failed");
 }

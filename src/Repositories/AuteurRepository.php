@@ -52,7 +52,7 @@ class AuteurRepository
         return AuteurMapper::mapToObject($categoriesDatas);
     }
 
-    public function update(int $id, string $prenom, string $nom): bool
+    public function updateAuteur(int $id, string $prenom, string $nom): bool
     {
         try {
             $request = $this->db->prepare("UPDATE `auteur` SET `prenom`=:prenom, `nom`=:nom WHERE `id`=:id");

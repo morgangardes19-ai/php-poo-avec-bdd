@@ -21,8 +21,8 @@ $auteur = $auteurRepository->findById($id);
 
         <input type="hidden" name="id" value="<?= $auteur->getId() ?>">
 
-        <input type="text" name="intitule" value="<?= htmlspecialchars($auteur->getPrenom()) ?>">
-        <input type="text" name="intitule" value="<?= htmlspecialchars($auteur->getNom()) ?>">
+        <input type="text" name="prenom" value="<?= htmlspecialchars($auteur->getPrenom()) ?>">
+        <input type="text" name="nom" value="<?= htmlspecialchars($auteur->getNom()) ?>">
 
         <button type="submit">Modifier</button>
 
