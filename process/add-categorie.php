@@ -6,6 +6,7 @@
 // etape à faire ici : validation des donnée avec tous les if de verification du $_POST ainsi que le noettoyage des inputs
 // bla bla bla les étapes de sécurité 
 
+// SECURITE
  if ($_SERVER['REQUEST_METHOD'] !== "POST") {
     header("Location: ../public/index.php?error=bad-method");
     exit();
