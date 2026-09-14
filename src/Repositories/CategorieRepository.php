@@ -90,7 +90,7 @@ class CategorieRepository
         public function delete(int $id): bool
         {
             try {
-                $request = $this->db->prepare("DELETE FROM `categorie` WHERE 'id'=:id");
+                $request = $this->db->prepare("DELETE FROM `categorie` WHERE id = :id");
                 $request->execute([
                     ':id' => $id
                 ]);

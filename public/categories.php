@@ -40,7 +40,7 @@ $categories = $categorieRepository->findAll();
                     <td><?= htmlspecialchars($categorie->getIntitule()) ?></td>
                     <td>
                         <a href="../public/update-categorie.php?id=<?= $categorie->getId() ?>">Modifier</a>
-                        <a href="">Supprimer</a>
+                        <a href="../process/delete-categorie.php?id=<?= $categorie->getId() ?>">Supprimer</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
