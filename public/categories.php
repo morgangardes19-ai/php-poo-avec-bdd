@@ -29,7 +29,7 @@ $categories = $categorieRepository->findAll();
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nom</th>
+                <th>Genre</th>
                 <th>Actions</th>
             </tr>
         </thead>

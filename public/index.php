@@ -12,5 +12,6 @@
 <body>
     <h1>PHP POO avec BDD via PDO</h1>
     <a href="./categories.php">Accès CRUD Categories</a>
+    <a href="./auteurs.php">Accès CRUD Auteurs</a>
 </body>
 </html>
