@@ -25,12 +25,12 @@ require_once "../utils/autoloader.php";
 require_once "../utils/db_connect.php";
 
 $auteurRepository = new AuteurRepository($db);
-$isSuccess = $auteurRepository->insert($prenom, $nom);
+$isSuccess = $auteurRepository->insertAuteur($prenom, $nom);
 
 if ($isSuccess) {
-    header("Location: ../public/categories.php");
+    header("Location: ../public/auteurs.php");
 } else {
-    header("Location: ../public/add-categorie.php?error=database-failed");
+    header("Location: ../public/add-auteur.php?error=database-failed");
 }
 
 

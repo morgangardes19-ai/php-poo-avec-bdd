@@ -22,10 +22,10 @@ class AuteurRepository
         return $auteurs;
     }
 
-    public function insert(string $prenom, string $nom): bool
+    public function insertAuteur(string $prenom, string $nom): bool
     {
         try {
-            $request = $this->db->prepare("INSERT INTO `auteur`(`prenom`, `nom`) VALUES (':prenom',':nom')");
+            $request = $this->db->prepare("INSERT INTO `auteur`(`prenom`, `nom`) VALUES (:prenom,:nom)");
             $request->execute([
                 ':prenom' => $prenom,
                 ':nom' => $nom
