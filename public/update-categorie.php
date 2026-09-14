@@ -3,7 +3,9 @@ require_once "../utils/autoloader.php";
 
 
 $id = $_GET['id'];
-$categories = $categorieRepository->update();
+
+$categorieRepository = new CategorieRepository($db);
+$categorie = $categorieRepository->findById($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">

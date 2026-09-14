@@ -1,14 +1,14 @@
 
 <?php
 
-// var_dump($_GET);
+// var_dump($_POST);
 // die();
 
 // etape à faire ici : validation des donnée avec tous les if de verification du $_POST ainsi que le noettoyage des inputs
 // bla bla bla les étapes de sécurité 
 
-$intitule = htmlspecialchars(trim($_GET["id"]));
-$intitule = htmlspecialchars(trim($_GET["intitule"]));
+$intitule = htmlspecialchars(trim($_POST["id"]));
+$intitule = htmlspecialchars(trim($_POST["intitule"]));
 
 // var_dump($intitule);
 
