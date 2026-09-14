@@ -37,9 +37,9 @@ $auteurs = $auteurRepository->findAll();
                     <td><?= htmlspecialchars($auteur->getId()) ?></td>
                     <td><?= htmlspecialchars($auteur->getPrenom()) ?></td>
                     <td><?= htmlspecialchars($auteur->getNom()) ?></td>
-                    <!-- <td>
+                    <td>
                         <a href="../public/update-auteur.php?id=<?= $auteur->getId() ?>">Modifier</a>
-                    </td> -->
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -1,0 +1,32 @@
+<?php
+require_once "../utils/autoloader.php";
+require_once "../utils/db_connect.php";
+
+$id = $_GET['id'];
+
+$auteurRepository = new auteurRepository($db);
+$auteur = $auteurRepository->findById($id);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="../process/update-auteur.php" method="post">
+
+        <input type="hidden" name="id" value="<?= $auteur->getId() ?>">
+
+        <input type="text" name="intitule" value="<?= htmlspecialchars($auteur->getPrenom()) ?>">
+        <input type="text" name="intitule" value="<?= htmlspecialchars($auteur->getNom()) ?>">
+
+        <button type="submit">Modifier</button>
+
+    </form>
+</body>
+
+</html>

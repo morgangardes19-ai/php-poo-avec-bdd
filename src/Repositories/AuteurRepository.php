@@ -37,4 +37,8 @@ class AuteurRepository
             return false;
         }
     }
+
+    public function findById(int $id) : Auteur {
+        
+    }
 }
