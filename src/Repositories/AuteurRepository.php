@@ -38,7 +38,34 @@ class AuteurRepository
         }
     }
 
-    public function findById(int $id) : Auteur {
-        
+    public function findById(int $id): Auteur
+    {
+        $request = $this->db->prepare(
+            "SELECT * FROM auteur WHERE id = :id"
+        );
+
+        $request->execute([
+            ':id' => $id
+        ]);
+        $categoriesDatas = $request->fetch(PDO::FETCH_ASSOC);
+
+        return AuteurMapper::mapToObject($categoriesDatas);
+    }
+
+    public function update(int $id, string $prenom, string $nom): bool
+    {
+        try {
+            $request = $this->db->prepare("UPDATE `auteur` SET `prenom`=:prenom, `nom`=:nom WHERE `id`=:id");
+            $request->execute([
+                ':id' => $id,
+                ':prenom' => $prenom,
+                ':nom' => $nom
+            ]);
+
+            return true;
+        } catch (\Throwable $th) {
+
+            return false;
+        }
     }
 }
