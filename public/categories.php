@@ -40,7 +40,11 @@ $categories = $categorieRepository->findAll();
                     <td><?= htmlspecialchars($categorie->getIntitule()) ?></td>
                     <td>
                         <a href="../public/update-categorie.php?id=<?= $categorie->getId() ?>">Modifier</a>
-                        <a href="../process/delete-categorie.php?id=<?= $categorie->getId() ?>">Supprimer</a>
+                        <!-- <a href="../process/delete-categorie.php?id=<?= $categorie->getId() ?>">Supprimer</a> -->
+                         <form action="../process/delete-categorie.php" method="post"></form>
+                         <label for="id"></label>
+                         <input type="hidden" name="id">
+                         <button type="submit">Supprimer</button>
                     </td>
                 </tr>
             <?php endforeach; ?>
