@@ -68,4 +68,20 @@ class AuteurRepository
             return false;
         }
     }
+
+    
+        public function deleteAuteur(int $id): bool
+        {
+            try {
+                $request = $this->db->prepare("DELETE FROM `auteur` WHERE id = :id");
+                $request->execute([
+                    ':id' => $id
+                ]);
+
+                return true;
+            } catch (\Throwable $th) {
+
+                return false;
+            }
+        }
 }
