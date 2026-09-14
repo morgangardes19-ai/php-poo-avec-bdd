@@ -45,7 +45,7 @@ $categories = $categorieRepository->findAll();
                         <!-- <a href="../process/delete-categorie.php?id=<?= $categorie->getId() ?>">Supprimer</a> -->
                         <form action="../process/delete-categorie.php" method="post">
                             <label for="id"></label>
-                            <input type="hidden" id="id" name="id">
+                            <input type="hidden" id="id" name="id" value="<?= $categorie->getId() ?>">
                             <button type="submit">Supprimer</button>
                         </form>
                     </td>
