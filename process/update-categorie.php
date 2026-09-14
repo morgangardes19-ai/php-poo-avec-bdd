@@ -7,7 +7,7 @@
 // etape à faire ici : validation des donnée avec tous les if de verification du $_POST ainsi que le noettoyage des inputs
 // bla bla bla les étapes de sécurité 
 
-$intitule = htmlspecialchars(trim($_POST["id"]));
+$id = htmlspecialchars(trim($_POST["id"]));
 $intitule = htmlspecialchars(trim($_POST["intitule"]));
 
 // var_dump($intitule);
@@ -17,7 +17,7 @@ require_once "../utils/autoloader.php";
 require_once "../utils/db_connect.php";
 
 $categorieRepository = new CategorieRepository($db);
-$isSuccess = $categorieRepository->update($intitule);
+$isSuccess = $categorieRepository->update($id, $intitule);
 
 if ($isSuccess) {
     header("Location: ../public/categories.php");
