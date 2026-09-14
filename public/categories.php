@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../utils/autoloader.php";
 require_once "../utils/db_connect.php";
 
@@ -14,11 +14,13 @@ $categories = $categorieRepository->findAll();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>CRUD des categories</h1>
     <a href="./add-categorie.php">Ajouter une catégorie</a>
@@ -32,7 +34,7 @@ $categories = $categorieRepository->findAll();
             </tr>
         </thead>
         <tbody>
-            <?php 
+            <?php
             /** @var Categorie $categorie */
             foreach ($categories as $categorie): ?>
                 <tr>
@@ -41,15 +43,17 @@ $categories = $categorieRepository->findAll();
                     <td>
                         <a href="../public/update-categorie.php?id=<?= $categorie->getId() ?>">Modifier</a>
                         <!-- <a href="../process/delete-categorie.php?id=<?= $categorie->getId() ?>">Supprimer</a> -->
-                         <form action="../process/delete-categorie.php" method="post"></form>
-                         <label for="id"></label>
-                         <input type="hidden" name="id">
-                         <button type="submit">Supprimer</button>
+                        <form action="../process/delete-categorie.php" method="post">
+                            <label for="id"></label>
+                            <input type="hidden" id="id" name="id">
+                            <button type="submit">Supprimer</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    
+
 </body>
+
 </html>
