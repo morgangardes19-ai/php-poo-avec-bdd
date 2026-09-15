@@ -39,8 +39,7 @@ $auteurs = $auteurRepository->findAll();
                     <td><?= htmlspecialchars($auteur->getNom()) ?></td>
                     <td>
                         <a href="../public/update-auteur.php?id=<?= $auteur->getId() ?>">Modifier</a>
-                    </td>
-                    <td>
+
                         <form action="../process/delete-auteur.php" method="post">
                             <label for="id"></label>
                             <input type="hidden" id="id" name="id" value="<?= $auteur->getId() ?>">
